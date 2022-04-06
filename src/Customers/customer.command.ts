@@ -1,4 +1,4 @@
-import { Command, Positional, Option } from 'nestjs-command';
+import { Command } from 'nestjs-command';
 import { Injectable } from '@nestjs/common';
 import { CustomerService } from './customer.service';
 
@@ -10,9 +10,7 @@ export class CustomerCommand {
     command: 'customers',
     describe: 'get all customers',
   })
-  async customers(
-  ) {
-      console.log("HI")
-      return this.customerSerivce.getCustomers();
+  async customers() {
+    return this.customerSerivce.getCustomers();
   }
 }
